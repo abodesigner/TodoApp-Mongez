@@ -31,7 +31,7 @@ export default function TodoItem({ task }: TodoItemProps) {
     <>
       <div className="bg-gray-800 outline-none bg-transparent border border-gray-600 p-2 w-[600px] text-gray my-4 rounded">
         <div className="flex justify-between items-center">
-          <div className="flex justify-center items-center space-x-2">
+          <div className="flex justify-center items-center">
             <input
               type="checkbox"
               checked={task.completed}
@@ -46,16 +46,11 @@ export default function TodoItem({ task }: TodoItemProps) {
                 value={editingText}
                 onChange={e => setEditingText(e.target.value)}
                 onBlur={handleUpdate}
-                // onKeyDown={e => {
-                //   if (e.key === "Enter") {
-                //     handleUpdate();
-                //   }
-                // }}
                 autoFocus
               />
             ) : (
               <p
-                className={`text-gray-400 text-xl ${task.completed ? "line-through" : null}`}
+                className={`text-gray-400 text-xl ${task.completed ? "line-through" : null} ltr:ml-4 rtl:mr-4`}
                 onClick={handleCompletedTasks}>
                 {task.text.trim().toLowerCase()}
               </p>
