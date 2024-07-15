@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { MdModeEdit } from "react-icons/md";
-import { TiDelete } from "react-icons/ti";
+import { FaEdit } from "react-icons/fa";
+import { RiDeleteBinFill } from "react-icons/ri";
 import { todoAtom } from "../../atoms/todo-atom";
 import { TodoListItem } from "../../types";
 
@@ -59,14 +59,14 @@ export default function TodoItem({ task }: TodoItemProps) {
 
           <div className="flex items-center justify-center gap-x-2">
             <button
-              className="flex items-center justify-around p-2 text-red-500 rounded"
+              className="flex items-center bg-gray-900 rounded-3xl justify-around p-2 text-red-500 rounded"
               onClick={handleDelete}>
-              <TiDelete size={30} />
+              <RiDeleteBinFill size={20} />
             </button>
             <button
-              className="flex items-center justify-around p-2 text-blue-500 rounded"
+              className="flex items-center bg-gray-900 rounded-3xl justify-around p-2 text-blue-500 rounded"
               onClick={handleEdit}>
-              <MdModeEdit size={30} />
+              <FaEdit size={20} />
             </button>
           </div>
         </div>
