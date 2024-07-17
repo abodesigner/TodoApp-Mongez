@@ -1,7 +1,9 @@
 {
-  "titleText": "قائمة المهام",
+  "title": "قائمة المهام",
   "bio": "حدد أهدافك | إستمر ...",
   "placeholderText": "أدخل المهمة",
   "emptyMsg": "لا يوجد مهمات",
-  "addBtn": "أضف"
+  "addBtn": "أضف",
+  "completed": "منتهية",
+  "pending": "قيد الانتظار"
 }

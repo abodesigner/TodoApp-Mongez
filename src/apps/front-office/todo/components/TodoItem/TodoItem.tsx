@@ -1,3 +1,4 @@
+import { trans } from "@mongez/localization";
 import { useState } from "react";
 import { FaEdit } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
@@ -39,22 +40,29 @@ export default function TodoItem({ task }: TodoItemProps) {
               className="h-4 w-4 rounded border-yellow-500 text-indigo-600 focus:ring-indigo-600"
             />
 
-            {isEdit ? (
-              <input
-                className="bg-transparent w-[400px] outline-none text-white text-3xl p-2"
-                type="text"
-                value={editingText}
-                onChange={e => setEditingText(e.target.value)}
-                onBlur={handleUpdate}
-                autoFocus
-              />
-            ) : (
-              <p
-                className={`text-gray-400 text-xl ${task.completed ? "line-through" : null} ltr:ml-4 rtl:mr-4`}
-                onClick={handleCompletedTasks}>
-                {task.text.trim().toLowerCase()}
-              </p>
-            )}
+            <div>
+              {isEdit ? (
+                <input
+                  className="bg-transparent w-[400px] outline-none text-white text-3xl p-2"
+                  type="text"
+                  value={editingText}
+                  onChange={e => setEditingText(e.target.value)}
+                  onBlur={handleUpdate}
+                  autoFocus
+                />
+              ) : (
+                <p
+                  className={`text-gray-400 text-xl ${task.completed ? "line-through" : null} ltr:ml-4 rtl:mr-4`}
+                  onClick={handleCompletedTasks}>
+                  {task.text.trim().toLowerCase()}
+                </p>
+              )}
+            </div>
+
+            <p
+              className={` ${task.completed ? "text-green-500" : "text-red-300"} uppercase text-sm mx-8`}>
+              {task.completed ? `${trans("completed")}` : `${trans("pending")}`}
+            </p>
           </div>
 
           <div className="flex items-center justify-center gap-x-2">

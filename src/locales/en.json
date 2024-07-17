@@ -1,7 +1,9 @@
 {
-  "titleText": "Tasks List",
+  "title": "Tasks List",
   "bio": "Focus on goals | keep going ...",
   "placeholderText": "Enter you task",
   "emptyMsg": "No tasks yet",
-  "addBtn": "Add"
+  "addBtn": "Add",
+  "completed": "completed",
+  "pending": "pending"
 }
